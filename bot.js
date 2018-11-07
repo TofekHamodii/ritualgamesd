@@ -43,7 +43,7 @@ let embed = new Discord.RichEmbed()
 .addField(' الاعضاء👥 ',` [${client.users.size}] `)
 .addField('الرومات📚 ',`[${client.channels.size}]`) 
 .addField(' البنق🚀 ',`[${Date.now() - message.createdTimestamp}]`) 
-.addField(' BOT BY : ',`Squad Team`) 
+.addField(' BOT BY : ',`＃Simple 1k ,Uv 🥂#3386`) 
 .setColor('#7d2dbe')
 message.channel.sendEmbed(embed);
 }
