@@ -30,33 +30,77 @@ client.on("message", message => {
 يحتوي على خاصيه الميوزك بجوده عاليه
 **
 
+        ***__General orders__***
+**
+『id / معلومات عن حسابك』
+『draw / يكرر كلامك في صوره』
+『embed / يكرر كلامك بمبيد』
+『roles / يعرض لك الرتب و عددها』
+『rooms / يعرض لك الرومات وعددها』
+『server / معلومات عن السيرفر』
+『animal / يعطيك صور حيوانات』
+『image / يعرض صوره السيرفر』
+『avatar / يعرض صورتك او صوره شخص』
+『time / يعرض لك الوقت』
+『date / يعرض لك التاريخ』
+『dt / يعرض الوقت في الامارات و مكه المكرمه و مصر و التاريخ』
+**
+
+        ***__Bot orders__***
+**
+『ping / يعرض لك سرعه اتصال البوت』
+『uptime / يعرض لك صار للبوت كم شغال』
+『support / سيرفر الدعم القني و المساعده』
+『invite / اضافه البوت』
+『members / حاله الاعضاء』
+『bot / معلومات عن البوت』
+**
+
+        ***__Administrative Orders__***
+**
+『kick / كيك』
+『ban / بان』
+『mute /ميوت』
+『unmute /فك الميوت』
+『mutechannel /قفل الشات』
+『unmutechannel /فتح الشات』
+-add.r
+『delet / مسح روم』
+『color 50 /انشاء 50 لون』
+『color 100/انشاء 100 لون』
+『color 140/انشاء 140 لوم』
+『ct /انشاء روم كتابي』
+『cv /انشاء روم صوتي』
+『bc /برودكاست』
+**
+
         ***__Special orders __***
 **
--youtube / باحث اليوتيوب 』
--afk / تصبح خارج النطاق』  f
--AutoRole / اعطاء شخص رتبه تلقائيه عند دخوله』
--imgwelcome / لتفعيل الترحيب بصوره 』
--colors / لي عرض قائمه الوان السيرفر』
--color / لي تغير لونك』
--rainbow / الرنبو』
+『youtube / باحث اليوتيوب 』
+『afk / تصبح خارج النطاق』
+『AutoRole / اعطاء شخص رتبه تلقائيه عند دخوله』
+『imgwelcome / لتفعيل الترحيب بصوره 』
+『colors / لي عرض قائمه الوان السيرفر』
+『color / لي تغير لونك』
+『rainbow / الرنبو』
 **
 
         ***__Games orders__***
  **       
--لعبه صراحه / صراحه』
--لعبه مريم / مريم』
--لعبه خواطر / خواطر』
--يعطيك شعر عن الحب / حب』
--يخيرك بين شي وشي / لو خيروك』
--يعطيك عقاب و لازم تنفذه / عقاب』
--لعبه اسئله / كت تويت』
+『لعبه صراحه / صراحه』
+『لعبه مريم / مريم』
+『لعبه خواطر / خواطر』
+『يعطيك شعر عن الحب / حب』
+『يخيرك بين شي وشي / لو خيروك』
+『يعطيك عقاب و لازم تنفذه / عقاب』
+『لعبه اسئله / كت تويت』
 **
    
         ***__Minecraft orders__***
 **          
--mq / اسئله عن ماين كرافت』
--mp / صور عن ماين كرافت』
--mf / معلومات عن ماين كرافت』
+『mq / اسئله عن ماين كرافت』
+『mp / صور عن ماين كرافت』
+『mf / معلومات عن ماين كرافت』
 **  
         
 `)
@@ -461,7 +505,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-var prefix = ".";
+var prefix = "-";
 
     if (message.author.id === client.user.id) return;
     if (message.guild) {
@@ -469,7 +513,7 @@ var prefix = ".";
     let args = message.content.split(' ').slice(1).join(' ');
 if(message.content.split(' ')[0] == prefix + 'bc') {
     if (!args[1]) {
-message.channel.send("**.bc <message>**");
+message.channel.send("**-bc <message>**");
 return;
 }
         message.guild.members.forEach(m => {
@@ -510,7 +554,7 @@ if (message.content.startsWith(prefix + "uptime")) {
         } else if (uptime >= 3.6e+6) {
 
             hours++;
-            uptime -= 3.6e+6; f
+            uptime -= 3.6e+6;
 
         } else if (uptime >= 60000) {
 
@@ -578,7 +622,7 @@ let toSend = message.mentions.users.first();
 let xFive = new Discord.RichEmbed()
     .setColor("ORANGE")
     .setThumbnail(message.author.avatarURL)
-    .setFooter("SenioR TeaM. || "+"- "+Month+"."+Yea-"."+Day+" -"+hours+":"+minutes+" "+suffix)
+    .setFooter("SenioR TeaM. || "+"- "+Month+"."+Year+"."+Day+" -"+hours+":"+minutes+" "+suffix)
     .addField("Message","**"+args+"**")
 if(command === `${prefix}message`) {
     if(toSend.bot) return message.reply("**# You cannot send a message to a bot!** :sparkler:");
@@ -655,7 +699,7 @@ message.channel.sendEmbed(cat);
   });
 
 client.on('message', message => {
-    if (message.content.startsWith("-avatar")) {
+    if (message.content.startsWith("!avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -673,7 +717,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("-stats")) {
+    if (message.content.startsWith("!stats")) {
     message.channel.send({
         embed: new Discord.RichEmbed()
             .addField('Uptime', timeCon(process.uptime()), true)
@@ -787,7 +831,7 @@ client.on("message", (message) => {
  .setThumbnail(client.user.avatarURL)     
  .setDescription(" ***welcome To server support*** " + `
  **
-رابط السيرفر https://discord.gg/bTUN9Fj
+رابط السيرفر https://discord.gg/Hf9TW4pY
  **
 `);
   message.author.sendEmbed(embed);
@@ -822,7 +866,7 @@ if (command == "embed") {
 
 //اوامر اداريه//
 
-const fs = require('fs'); f
+const fs = require('fs');
 
 var user = {};
 var warn = {};
@@ -1277,106 +1321,106 @@ client.on('message', message=>{
     }
 });
 
-var x1 = "f!color 1"
-var x2 = "f!color 2"
-var x3 = "f!color 3"
-var x4 = "f!color 4"
-var x5 = "f!color 5"
-var x6 = "f!color 6"
-var x7 = "f!color 7"
-var x8 = "f!color 8"
-var x9 = "f!color 9"
-var x10 = "f!color 10"
-var x11 = "f!color 11"
-var x12 = "f!color 12"
-var x13 = "f!color 13"
-var x14 = "f!color 14"
-var x15 = "f!color 15"
-var x16 = "f!color 16"
-var x17 = "f!color 17"
-var x18 = "f!color 18"
-var x19 = "f!color 19"
-var x20 = "f!color 20"
-var x21 = "f!color 21"
-var x22 = "f!color 22"
-var x23 = "f!color 23"
-var x24 = "f!color 24"
-var x25 = "f!color 25"
-var x26 = "f!color 26"
-var x27 = "f!color 27"
-var x28 = "f!color 28"
-var x29 = "f!color 29"
-var x30 = "f!color 30"
-var x31 = "f!color 31"
-var x32 = "f!color 32"
-var x33 = "f!color 33"
-var x34 = "f!color 34"
-var x35 = "f!color 35"
-var x36 = "f!color 36"
-var x37 = "f!color 37"
-var x38 = "f!color 38"
-var x39 = "f!color 39"
-var x40 = "f!color 40"
-var x41 = "f!color 41"
-var x42 = "f!color 42"
-var x43 = "f!color 43"
-var x44 = "f!color 44"
-var x45 = "f!color 45"
-var x46 = "f!color 46"
-var x47 = "f!color 47"
-var x48 = "f!color 48"
-var x49 = "f!color 49"
-var x50 = "f!color 50"
-var x51 = "f!color 51"
-var x52 = "f!color 52"
-var x53 = "f!color 53"
-var x54 = "f!color 54"
-var x55 = "f!color 55"
-var x56 = "f!color 56"
-var x57 = "f!color 57"
-var x58 = "f!color 58"
-var x59 = "f!color 59"
-var x60 = "f!color 60"
-var x61 = "f!color 61"
-var x62 = "f!color 62"
-var x63 = "f!color 63"
-var x64 = "f!color 64"
-var x65 = "f!color 65"
-var x66 = "f!color 66"
-var x67 = "f!color 67"
-var x68 = "f!color 68"
-var x69 = "f!color 69"
-var x70 = "f!color 70"
-var x71 = "f!color 71"
-var x72 = "f!color 72"
-var x73 = "f!color 73"
-var x74 = "f!color 74"
-var x75 = "f!color 75"
-var x76 = "f!color 76"
-var x77 = "f!color 77"
-var x78 = "f!color 78"
-var x79 = "f!color 79"
-var x80 = "f!color 80"
-var x81 = "f!color 81"
-var x82 = "f!color 82"
-var x83 = "f!color 83"
-var x84 = "f!color 84"
-var x85 = "f!color 85"
-var x86 = "f!color 86"
-var x87 = "f!color 87"
-var x88 = "f!color 88"
-var x89 = "f!color 89"
-var x90 = "f!color 90"
-var x91 = "f!color 91"
-var x92 = "f!color 92"
-var x93 = "f!color 93"
-var x94 = "f!color 94"
-var x95 = "f!color 95"
-var x96 = "f!color 96"
-var x97 = "f!color 97"
-var x98 = "f!color 98"
-var x99 = "f!color 99"
-var x100 = "f!color 100"
+var x1 = "-color 1"
+var x2 = "-color 2"
+var x3 = "-color 3"
+var x4 = "-color 4"
+var x5 = "-color 5"
+var x6 = "-color 6"
+var x7 = "-color 7"
+var x8 = "-color 8"
+var x9 = "-color 9"
+var x10 = "-color 10"
+var x11 = "-color 11"
+var x12 = "-color 12"
+var x13 = "-color 13"
+var x14 = "-color 14"
+var x15 = "-color 15"
+var x16 = "-color 16"
+var x17 = "-color 17"
+var x18 = "-color 18"
+var x19 = "-color 19"
+var x20 = "-color 20"
+var x21 = "-color 21"
+var x22 = "-color 22"
+var x23 = "-color 23"
+var x24 = "-color 24"
+var x25 = "-color 25"
+var x26 = "-color 26"
+var x27 = "-color 27"
+var x28 = "-color 28"
+var x29 = "-color 29"
+var x30 = "-color 30"
+var x31 = "-color 31"
+var x32 = "-color 32"
+var x33 = "-color 33"
+var x34 = "-color 34"
+var x35 = "-color 35"
+var x36 = "-color 36"
+var x37 = "-color 37"
+var x38 = "-color 38"
+var x39 = "-color 39"
+var x40 = "-color 40"
+var x41 = "-color 41"
+var x42 = "-color 42"
+var x43 = "-color 43"
+var x44 = "-color 44"
+var x45 = "-color 45"
+var x46 = "-color 46"
+var x47 = "-color 47"
+var x48 = "-color 48"
+var x49 = "-color 49"
+var x50 = "-color 50"
+var x51 = "-color 51"
+var x52 = "-color 52"
+var x53 = "-color 53"
+var x54 = "-color 54"
+var x55 = "-color 55"
+var x56 = "-color 56"
+var x57 = "-color 57"
+var x58 = "-color 58"
+var x59 = "-color 59"
+var x60 = "-color 60"
+var x61 = "-color 61"
+var x62 = "-color 62"
+var x63 = "-color 63"
+var x64 = "-color 64"
+var x65 = "-color 65"
+var x66 = "-color 66"
+var x67 = "-color 67"
+var x68 = "-color 68"
+var x69 = "-color 69"
+var x70 = "-color 70"
+var x71 = "-color 71"
+var x72 = "-color 72"
+var x73 = "-color 73"
+var x74 = "-color 74"
+var x75 = "-color 75"
+var x76 = "-color 76"
+var x77 = "-color 77"
+var x78 = "-color 78"
+var x79 = "-color 79"
+var x80 = "-color 80"
+var x81 = "-color 81"
+var x82 = "-color 82"
+var x83 = "-color 83"
+var x84 = "-color 84"
+var x85 = "-color 85"
+var x86 = "-color 86"
+var x87 = "-color 87"
+var x88 = "-color 88"
+var x89 = "-color 89"
+var x90 = "-color 90"
+var x91 = "-color 91"
+var x92 = "-color 92"
+var x93 = "-color 93"
+var x94 = "-color 94"
+var x95 = "-color 95"
+var x96 = "-color 96"
+var x97 = "-color 97"
+var x98 = "-color 98"
+var x99 = "-color 99"
+var x100 = "-color 100"
 
 client.on('message', message => {
 	if (message.content === x1) {
