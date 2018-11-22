@@ -51,28 +51,7 @@ message.channel.sendEmbed(sh);
 }//الكود حق بوت Mal Team ♥
 })//الكود حق بوت Mal Team ♥
 
-client.on('message', message => {
-if (message.content.startsWith(prefix + 'mypoints')) {//الكود حق بوت Mal Team ♥
-	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
-	let userData = points[message.author.id];
-	let embed = new Discord.RichEmbed()
-    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-	.setColor('#000000')
-	.setDescription(`نقاطك: \`${userData.points}\``)
-	message.channel.sendEmbed(embed)//الكود حق بوت Mal Team ♥
-  }
-  fs.writeFile("./points.json", JSON.stringify(points), (err) => {
-    if (err) console.error(err)//الكود حق بوت Mal Team ♥
-  })
-});
-
-
-
-
-
-            })
-    }
-    });
+	
 client.on("message", function(message) {
    if(message.content.startsWith(prefix + "rps")) {
     let messageArgs = message.content.split(" ").slice(1).join(" ");
@@ -416,7 +395,7 @@ if (!points[message.author.id]) points[message.author.id] = {
 
   if(!message.guild) return;
 
-    let id = message.author.id,prefix="!";
+    let id = message.author.id,prefix="-";
 
     if (spee[id] && (new Date).getTime() - spee[id] < 15*1000) {
 
